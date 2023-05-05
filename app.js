@@ -16,7 +16,7 @@
 //  app functions may need to return some values that tell these DOM functions
 //  if/what they need to display
 
-function getLocation() {
+const getLocation = (() => {
   //const formSubmit = document.getElementById("submitButton");
   const form = document.getElementById("form");
   form.addEventListener("submit", (event) => {
@@ -25,7 +25,7 @@ function getLocation() {
     let requestedLocation = locationInput.value;
     makeRequest(requestedLocation);
   });
-}
+})();
 
 function makeRequest(location) {
   fetch(
@@ -42,11 +42,9 @@ function makeRequest(location) {
         description: response.current.condition.text,
       };
       console.table(extractedData);
+      return extractedData;
     })
     .catch((e) => {
       console.log(e);
     });
-  //return weatherJSON;
 }
-
-getLocation();
