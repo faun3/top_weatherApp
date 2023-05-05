@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
     <link href="style.css" rel="stylesheet" />
-    <script src="app.js" defer></script>
+    <script type="module" src="app.js" defer></script>
+    <script type="module" src="DOMstuff.js" defer></script>
   </head>
   <body>
     <div id="app">
@@ -24,6 +25,19 @@
       </div>
       <div class="weatherData">
         <p>Cool data here</p>
+        <div class="weatherWrapper">
+          <div class="iconWrapper"></div>
+          <div class="textWrapper">
+            <div class="bigText">
+              <p></p>
+            </div>
+            <div class="toggleWrapper">
+              <p id="cText"></p>
+              <div>|</div>
+              <p id="fText"></p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
