@@ -1,4 +1,4 @@
-const makeRequest = (location) => {
+async function makeRequest(location) {
   fetch(
     `http://api.weatherapi.com/v1/current.json?key=ed6348fefce647298a8184902230505&q=${location}`
     //{ mode: "cors" }
@@ -23,7 +23,7 @@ const makeRequest = (location) => {
     .catch((e) => {
       console.log(e);
     });
-};
+}
 
 const form = document.getElementById("form");
 form.addEventListener("submit", (event) => {
@@ -44,13 +44,17 @@ form.addEventListener("submit", (event) => {
 //      the two toggles between Celsius and Farenheit temps
 
 const weatherViewFactory = (dataObject) => {
-  const appendPoint = document.querySelector("weatherData");
+  const appendPoint = document.querySelector(".weatherData");
 
   const resetDisplay = () => {
     appendPoint.replaceChildren();
   };
 
-  const getIcon = () => {};
+  const displayIcon = () => {
+    const icon = appendPoint.querySelector(".iconWrapper img");
+    const SIZE = "128";
+    icon.src = "https:" + dataObject.iconSource;
+  };
 
   const tempToggle = () => {
     const weatherWrapperDiv = document.createElement("div");
@@ -95,6 +99,8 @@ const weatherViewFactory = (dataObject) => {
 
   const displayWeather = () => {
     //call all required display functions
+    //resetDisplay();
+    displayIcon();
   };
   return { displayWeather };
 };
