@@ -12,9 +12,10 @@ const makeRequest = (location) => {
     })
     .then(function (response) {
       let extractedData = {
-        temp_c: response.current.temp_c,
-        temp_f: response.current.temp_f,
+        tempC: response.current.temp_c,
+        tempF: response.current.temp_f,
         description: response.current.condition.text,
+        iconSource: response.current.condition.icon,
       };
       console.table(extractedData);
       return extractedData;
