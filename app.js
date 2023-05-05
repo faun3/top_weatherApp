@@ -36,7 +36,12 @@ function makeRequest(location) {
       return response.json();
     })
     .then(function (response) {
-      console.log(response);
+      let extractedData = {
+        temp_c: response.current.temp_c,
+        temp_f: response.current.temp_f,
+        description: response.current.condition.text,
+      };
+      console.table(extractedData);
     })
     .catch((e) => {
       console.log(e);
