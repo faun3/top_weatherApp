@@ -11,10 +11,15 @@
   <body>
     <p>Hi</p>
     <div class="formDiv">
-      <form>
+      <form id="form">
         <label for="location">Location</label>
-        <input type="text" name="location" id="location" />
-        <button>Get weather</button>
+        <input
+          type="text"
+          name="location"
+          id="location"
+          minlength="3"
+          maxlength="20" />
+        <button id="submitButton">Get weather</button>
       </form>
     </div>
   </body>
