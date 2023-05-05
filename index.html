@@ -9,18 +9,22 @@
     <script src="app.js" defer></script>
   </head>
   <body>
-    <p>Hi</p>
-    <div class="formDiv">
-      <form id="form">
-        <label for="location">Location</label>
-        <input
-          type="text"
-          name="location"
-          id="location"
-          minlength="3"
-          maxlength="20" />
-        <button id="submitButton">Get weather</button>
-      </form>
+    <div id="app">
+      <div class="formDiv" data-visible="visible">
+        <form id="form">
+          <label for="location">Location</label>
+          <input
+            type="text"
+            name="location"
+            id="location"
+            minlength="3"
+            maxlength="20" />
+          <button id="submitButton">Get weather</button>
+        </form>
+      </div>
+      <div class="weatherData">
+        <p>Cool data here</p>
+      </div>
     </div>
   </body>
 </html>
