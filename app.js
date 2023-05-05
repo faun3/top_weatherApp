@@ -97,5 +97,3 @@ const weatherViewFactory = (dataObject) => {
   };
   return { displayWeather };
 };
-
-export { weatherViewFactory };
