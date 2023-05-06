@@ -22,6 +22,10 @@ label {
   font-family: "Courier New", Courier, monospace;
 }
 
+.weatherData {
+  width: 35%;
+}
+
 .weatherWrapper.hidden {
   display: none;
 }
@@ -76,11 +80,22 @@ label {
   gap: 5%;
   align-items: center;
   justify-content: space-between;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  font-size: 1.2rem;
 }
 
 .formInline input {
   border-radius: 10px;
   border: 0;
+  flex-grow: 1;
+  height: 1.5rem;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.formInline input:focus {
+  border: 0;
+  outline: none;
 }
 
 #submitButton {
@@ -88,7 +103,10 @@ label {
   color: #efe6dd;
   background-color: #377771;
   border-radius: 15px;
-  font-size: 1.3rem;
-  height: 1.8rem;
+  font-size: 1.5rem;
   display: block;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
