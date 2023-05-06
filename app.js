@@ -79,24 +79,16 @@ const weatherViewFactory = (dataObject) => {
   const displayTemp = () => {
     const tempTextParagraph = document.querySelector(".bigText p");
 
-    tempTextParagraph.textContent = dataObject.tempC;
+    const celsiusText = document.getElementById("cText");
+
+    if (celsiusText.dataset.toggled === "true") {
+      tempTextParagraph.textContent = dataObject.tempC;
+    } else {
+      tempTextParagraph.textContent = dataObject.tempF;
+    }
   };
 
   const tempToggle = () => {
-    const weatherWrapperDiv = document.createElement("div");
-    weatherWrapperDiv.setAttribute("class", "weatherWrapperDiv");
-
-    const iconDiv = document.createElement("div");
-    iconDiv.setAttribute("class", "iconDiv");
-
-    //png sourced from weatherAPI
-    const iconSource = document.createAttribute("img");
-    //placeholder below, change returned object code to make it dynamic
-    iconSource.src = "https://cdn.weatherapi.com/weather/64x64/day/116.png";
-
-    const tempToggleDiv = document.createElement("div");
-    tempToggleDiv.setAttribute("class", "tempToggleDiv");
-
     const celsiusDisplayText = document.createElement("p");
     celsiusDisplayText.setAttribute("id", "cText");
     celsiusDisplayText.setAttribute("data-toggled", "true");
