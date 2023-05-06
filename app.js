@@ -88,6 +88,29 @@ const weatherViewFactory = (dataObject) => {
     }
   };
 
+  const tempToggler = () => {
+    const cText = document.getElementById("cText");
+    const fText = document.getElementById("fText");
+
+    cText.addEventListener("click", () => {
+      if (cText.dataset.toggled === "true") {
+        return;
+      }
+      cText.dataset.toggled = true;
+      fText.dataset.toggled = false;
+      displayTemp();
+    });
+
+    fText.addEventListener("click", () => {
+      if (fText.dataset.toggled === "true") {
+        return;
+      }
+      fText.dataset.toggled = true;
+      cText.dataset.toggled = false;
+      displayTemp();
+    });
+  };
+
   const tempToggle = () => {
     const celsiusDisplayText = document.createElement("p");
     celsiusDisplayText.setAttribute("id", "cText");
@@ -116,6 +139,7 @@ const weatherViewFactory = (dataObject) => {
   };
 
   const displayWeather = () => {
+    tempToggler();
     displayIcon();
     displayTemp();
   };
