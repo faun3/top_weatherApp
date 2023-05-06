@@ -1,4 +1,4 @@
-async function makeRequest(location) {
+function makeRequest(location) {
   fetch(
     `http://api.weatherapi.com/v1/current.json?key=ed6348fefce647298a8184902230505&q=${location}`
     //{ mode: "cors" }
@@ -30,8 +30,32 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
   const locationInput = document.getElementById("location");
   let requestedLocation = locationInput.value;
-  let weatherView = weatherViewFactory(makeRequest(requestedLocation));
-  weatherView.displayWeather();
+  fetch(
+    `http://api.weatherapi.com/v1/current.json?key=ed6348fefce647298a8184902230505&q=${requestedLocation}`
+    //{ mode: "cors" }
+  )
+    .then(function (response) {
+      if (response.status === 200) {
+        return response.json();
+      } else {
+        throw new Error("API Call failed!");
+      }
+    })
+    .then(function (response) {
+      let extractedData = {
+        tempC: response.current.temp_c,
+        tempF: response.current.temp_f,
+        description: response.current.condition.text,
+        iconSource: response.current.condition.icon,
+      };
+      console.table(extractedData);
+      let weatherView = weatherViewFactory(extractedData);
+      weatherView.displayWeather();
+      return extractedData;
+    })
+    .catch((e) => {
+      console.log(e);
+    });
 });
 
 //write out DOM interacting functions that take relevant data in
