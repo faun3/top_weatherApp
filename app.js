@@ -73,7 +73,8 @@ const weatherViewFactory = (dataObject) => {
   const displayIcon = () => {
     const icon = appendPoint.querySelector(".iconWrapper img");
     const SIZE = "128";
-    icon.src = "https:" + dataObject.iconSource;
+    icon.src =
+      "https:" + dataObject.iconSource.replace("64x64", `${SIZE}x${SIZE}`);
   };
 
   const displayTemp = () => {
