@@ -112,34 +112,16 @@ const weatherViewFactory = (dataObject) => {
     });
   };
 
-  const tempToggle = () => {
-    const celsiusDisplayText = document.createElement("p");
-    celsiusDisplayText.setAttribute("id", "cText");
-    celsiusDisplayText.setAttribute("data-toggled", "true");
-    celsiusDisplayText.textContent = "℃";
-
-    celsiusDisplayText.addEventListener("click", () => {
-      //swap currently active text to this one
-      //  active temperature is rendered with darker text
-    });
-
-    const pipeDivider = document.createElement("div");
-    pipeDivider.textContent = "|";
-
-    const farenheitDisplayText = document.createElement("p");
-    farenheitDisplayText.setAttribute("id", "fText");
-    farenheitDisplayText.setAttribute("data-toggled", "false");
-    farenheitDisplayText.textContent = "℉";
-
-    const bigTextDiv = document.createElement("div");
-    bigTextDiv.setAttribute("class", "bigTextDiv");
-
-    const bigTempText = document.createElement("p");
-    bigTempText.textContent =
-      requestedLocation.appendPoint.appendChild(weatherWrapperDiv);
+  const toggleWrapper = () => {
+    const weatherWrapper = document.querySelector(".weatherWrapper");
+    if (weatherWrapper.dataset.visible === "false") {
+      weatherWrapper.dataset.visible = "true";
+      weatherWrapper.classList.remove("hidden");
+    }
   };
 
   const displayWeather = () => {
+    toggleWrapper();
     tempToggler();
     displayIcon();
     displayTemp();
