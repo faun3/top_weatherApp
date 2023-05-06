@@ -11,7 +11,7 @@
   <body>
     <div id="app">
       <div class="weatherData">
-        <div class="weatherWrapper">
+        <div class="weatherWrapper hidden" data-visible="false">
           <div class="iconWrapper">
             <img />
           </div>
@@ -28,16 +28,18 @@
             </div>
           </div>
         </div>
-        <div class="formDiv" data-visible="visible">
+        <div class="formDiv">
           <form id="form">
-            <label for="location">Location</label>
-            <input
-              type="text"
-              name="location"
-              id="location"
-              minlength="3"
-              maxlength="20" />
-            <button id="submitButton">Get weather</button>
+            <div class="formInline">
+              <label for="location">Location</label>
+              <input
+                type="text"
+                name="location"
+                id="location"
+                minlength="3"
+                maxlength="20" />
+              <button id="submitButton">Go</button>
+            </div>
           </form>
         </div>
       </div>
