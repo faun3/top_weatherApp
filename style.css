@@ -1,20 +1,66 @@
 body {
   margin: 0;
   padding: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: darkblue;
+}
+
+#app {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+#app p {
+  color: white;
+  font-weight: 400;
+  font-family: "Courier New", Courier, monospace;
+}
+
+#app label {
+  color: white;
+}
+
+.iconWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.textWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.textContainer {
+  display: flex;
+}
+
+.bigText p {
+  font-size: 4rem;
+  margin: 0;
 }
 
 .toggleWrapper {
   display: flex;
   flex-flow: row nowrap;
-  align-items: center;
+  align-items: start;
   justify-items: space-between;
+  padding-top: 10%;
 }
 
 .toggleWrapper span {
   padding-left: 1%;
   padding-right: 1%;
+  font-size: 1rem;
+  color: white;
 }
 
 .toggleWrapper p {
   cursor: pointer;
+  font-size: 1.2rem;
+  margin: 0;
 }
