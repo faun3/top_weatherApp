@@ -70,14 +70,16 @@ form.addEventListener("submit", (event) => {
 const weatherViewFactory = (dataObject) => {
   const appendPoint = document.querySelector(".weatherData");
 
-  const resetDisplay = () => {
-    appendPoint.replaceChildren();
-  };
-
   const displayIcon = () => {
     const icon = appendPoint.querySelector(".iconWrapper img");
     const SIZE = "128";
     icon.src = "https:" + dataObject.iconSource;
+  };
+
+  const displayTemp = () => {
+    const tempTextParagraph = document.querySelector(".bigText p");
+
+    tempTextParagraph.textContent = dataObject.tempC;
   };
 
   const tempToggle = () => {
@@ -122,9 +124,8 @@ const weatherViewFactory = (dataObject) => {
   };
 
   const displayWeather = () => {
-    //call all required display functions
-    //resetDisplay();
     displayIcon();
+    displayTemp();
   };
   return { displayWeather };
 };
