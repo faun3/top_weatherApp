@@ -1,3 +1,15 @@
 p {
   color: red;
 }
+
+.toggleWrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-items: space-between;
+}
+
+.toggleWrapper span {
+  padding-left: 1%;
+  padding-right: 1%;
+}
