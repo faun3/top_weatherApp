@@ -3,7 +3,7 @@ body {
   padding: 0;
   height: 100vh;
   width: 100vw;
-  background-color: darkblue;
+  background-color: #34344a;
 }
 
 #app {
@@ -15,14 +15,15 @@ body {
   margin: auto;
 }
 
-#app p {
-  color: white;
+#app p,
+label {
+  color: #efe6dd;
   font-weight: 400;
   font-family: "Courier New", Courier, monospace;
 }
 
-#app label {
-  color: white;
+.weatherWrapper.hidden {
+  display: none;
 }
 
 .iconWrapper {
@@ -63,4 +64,31 @@ body {
   cursor: pointer;
   font-size: 1.2rem;
   margin: 0;
+}
+
+#form {
+  display: flex;
+}
+
+.formInline {
+  display: flex;
+  flex: 1 1 auto;
+  gap: 5%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.formInline input {
+  border-radius: 10px;
+  border: 0;
+}
+
+#submitButton {
+  border: none;
+  color: #efe6dd;
+  background-color: #377771;
+  border-radius: 15px;
+  font-size: 1.3rem;
+  height: 1.8rem;
+  display: block;
 }
