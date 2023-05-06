@@ -1,5 +1,6 @@
-p {
-  color: red;
+body {
+  margin: 0;
+  padding: 0;
 }
 
 .toggleWrapper {
@@ -12,4 +13,8 @@ p {
 .toggleWrapper span {
   padding-left: 1%;
   padding-right: 1%;
+}
+
+.toggleWrapper p {
+  cursor: pointer;
 }
